@@ -20,7 +20,8 @@ You'll need to edit the `settings.js` in the `.node-red`folder...
 If you want to go in this folder, you'll need to run the cmd in the docker container:
 
 - get the container name with `docker ps`
-  [alt text](./img/dockerps.png")
+
+  [alt text](img/dockerps.png")
 
 ## Getting start
 
