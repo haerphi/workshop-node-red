@@ -21,7 +21,7 @@ If you want to go in this folder, you'll need to run the cmd in the docker conta
 
 - get the container name with `docker ps`
 
-  [alt text](img/dockerps.png")
+  ![dockerps](./img/dockerps.png)
 
 ## Getting start
 
