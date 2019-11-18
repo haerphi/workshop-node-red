@@ -1,0 +1,29 @@
+---
+  version: "3"
+  services:
+    node-red:
+      image: nodered/node-red
+      ports:
+        - "1880:1880"
+      volumes:
+        - ./data:/data
+      restart: alwaysnode-red:
+      image: nodered/node-red
+      ports:
+        - "1880:1880"
+      volumes:
+        - ./data:/data
+      restart: always
+    mongo:
+      image: "mongo"
+      restart: "always"
+      ports:
+        - "27017:27017"
+      volumes:
+        - "mongo_db:/data/db"
+        - "./_dev:/usr/dump"
+      environment:
+        MONGO_INITDB_ROOT_USERNAME: "dev"
+        MONGO_INITDB_ROOT_PASSWORD: "dev"
+  volumes:
+    mongo_db:
