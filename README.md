@@ -53,7 +53,7 @@ You can go on this page : `http://127.0.0.1:1880/`
 
 - Wire `inject` to `debug`
 
-- Double click on `inject` and change his value
+- Double click on `inject` and change his value (modify `timestamp` to `string` for example)
 
 - Click on `deploy` (on the top right corner) & click on the button on the left of `inject`. You will see in the `debug tab` (on the top right corner) the value of `inject`
 
