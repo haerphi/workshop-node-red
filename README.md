@@ -144,3 +144,6 @@ You should have something like this:
     ![mongodb2server](./img/mongodb2server.png)
 - First step: we will insert a todo in the database in the collection `todo` so in the collection field of mongodb2 just write `todo` and change to operation to get `insertOne` <br>
   ![mongodbInsert](./img/mongodbInsert.png)
+
+- now you can add a `http in` node and configure it as `post` and for the `/newUser`
+  ![registeruser](./img/registeruser.png)
