@@ -4,6 +4,11 @@
 
 TODO
 
+## Objectives
+
+At the end this workshop, you should be able to create a simple api with node-red
+Simple means you will be able to create a register/login, create task(s) attribute to one user.
+
 ## Installation (node-red)
 
 - Clone this repository & move into the directory
@@ -134,9 +139,7 @@ You should have something like this:
 
 ![victory](./img/victory.jpeg)
 
-### Use mongodb node
-
-#### Setup mongodb settings
+#### Register & login (+setup mongodb connection)
 
 - drag&drop a `mongodb2 in` from the palette to the workspace
 - edit it
@@ -147,3 +150,34 @@ You should have something like this:
 
 - now you can add a `http in` node and configure it as `post` and for the `/newUser` ("verification" just mean, if you want to do a real api, you should put some condictions there)<br>
   ![registeruser](./img/registeruser.png)
+  if you want to check the result you can test your route with [postman](https://www.getpostman.com/). If you don't know how to use postman just click [here](./howtousepostman.md) !
+
+- now let's login, use the same parten as `newUser` but with `findOne` and not `insertOne` <br>
+  ![loginuser](./img/loginuser.png)
+  How do `fineOne` and `insertOne` work ? <br>
+  It's very simple: when you call `insertOne` it will put in the database all the `payload` object ! So if you put the "email" and the "password" in body of your http request, it will put the "email" and the "password" in the database. (It only work with mongodb).<br>
+  What about `findOne` ?<br>
+  `findOne` will check every document of you collection and check if all properties of the `payload` (and his value) is in a document of the collection.
+
+  If `findOne` doesn't have a match, it will just return `null`
+
+- Try it with postman ! Normaly the return of `register` should be like this:
+
+```
+{
+    "n": 1,
+    "ok": 1
+}
+```
+
+- and the result of `login`should be like this:
+
+```
+{
+    "_id": "5dd5a491c1d8080010bd0992",
+    "email": "plow",
+    "pw": "plow"
+}
+```
+
+Now keep this `_id`, it will be usefull in your next request with postman, we will use it as "login token".
