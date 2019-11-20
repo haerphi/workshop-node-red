@@ -139,7 +139,7 @@ You should have something like this:
 
 ![victory](./img/victory.jpeg)
 
-#### Register & login (+setup mongodb connection)
+### Register & login (+setup mongodb connection)
 
 - drag&drop a `mongodb2 in` from the palette to the workspace
 - edit it
@@ -181,3 +181,21 @@ You should have something like this:
 ```
 
 Now keep this `_id`, it will be usefull in your next request with postman, we will use it as "login token".
+
+**Good job you just finished the login part !**
+![gif](https://media.giphy.com/media/cQNRp4QA8z7B6/giphy.gif)
+
+### Create a task (insert again)
+
+Ok, insert something is easy now, you know how to do it ! But we will make it bit more complicated. if you don't specify anything, every user will see every task... And we don't want it...
+
+Earlier, I told you to save the `_id` of the user when you did the `login` request with **postman**. It's time to use it now.
+
+In postman just place this `_id` in a new headers called `Authorization` like this: <br>
+![authorization](./img/authozationPostman.png)
+
+- To create a task and assign it to a user, you will need a `http in` node, `http response` node, `mongodb2 in` node and... a `function` node !<br>
+  In fact, you will need to write few code lines... <br>
+  But what will we do and what will we write ?<br>
+  We need to find the id in the header (`msg.req.authorization`) and put it in the `idUser` property in the `msg.payload` <br>
+  ![authorizationtoiduser](./img/authorizationtoiduser.png)
