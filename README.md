@@ -185,6 +185,8 @@ Now keep this `_id`, it will be usefull in your next request with postman, we wi
 **Good job you just finished the login part !**
 ![gif](https://media.giphy.com/media/cQNRp4QA8z7B6/giphy.gif)
 
+If you have any question about this part, just ask them :)
+
 ### Create a task (insert again)
 
 Ok, insert something is easy now, you know how to do it ! But we will make it bit more complicated. if you don't specify anything, every user will see every task... And we don't want it...
