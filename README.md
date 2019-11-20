@@ -97,6 +97,14 @@ In this example:
 
 ## Api time !
 
+Basically, node-red already have everything you need to connect the client & the server.
+
+In the network block of the palette, you will find `http in`, `http response`, `http request` and more other network things...
+
+But there is no node aboud database. The next step will help to install "new" node to manage your database (mongodb in this case)
+
+### Setup
+
 - first you will need to install mongodb2 (2 because the first version isn't really complete) in node-red
 
 - click on the menu icon in the top right of the window and click in `settings`
@@ -108,3 +116,21 @@ In this example:
 - search for `mongodb2` (`node-red-contrib-mongodb2`) and install it
 
 - you'll need to install `node-red-contrib-objectid`, it will help you to search by the id of the object in the database/collection
+
+- after the installation you should find a `mongodb2 in` in your nodes (in the storage bock) and an `objectid` node (in the function bock)
+
+### Hello world (api - get /hello)
+
+- drag&drop a `http in` node and edit his proteries
+  ![httpget/](./img/httpproperty.png)
+
+- drag&drop a http response
+
+- place a template node between them and edit it to return "hello world"
+
+You should something like this:
+![httpget/](./img/api-helloworld.png)
+
+- try in your natigator : http://127.0.0.1:1880/hello, you should see `Hello world`
+
+![victory](./img/victory.jpeg)
