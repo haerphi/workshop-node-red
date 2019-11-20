@@ -194,8 +194,40 @@ Earlier, I told you to save the `_id` of the user when you did the `login` reque
 In postman just place this `_id` in a new headers called `Authorization` like this: <br>
 ![authorization](./img/authozationPostman.png)
 
-- To create a task and assign it to a user, you will need a `http in` node, `http response` node, `mongodb2 in` node and... a `function` node !<br>
+- To create a task and assign it to a user, you will need a `http in` node, `http response` node, `mongodb2 in` node (with `insertOne`) and... a `function` node !<br>
   In fact, you will need to write few code lines... <br>
   But what will we do and what will we write ?<br>
   We need to find the id in the header (`msg.req.authorization`) and put it in the `idUser` property in the `msg.payload` <br>
   ![authorizationtoiduser](./img/authorizationtoiduser.png)
+  Test in **postman** without forget to write the `authorization` in the `headers` tab <br>
+  ![newTodo](./img/newTodo.png)
+
+### Find all task of a user
+
+Find all task from a user is like the previous one but with a `find.toArray` and not ~~`insertOne`~~ <br>
+![getTodos](./img/getTodos.png)
+![getTodosPostman](./img/getTodosPostman.png)
+
+### Find a task by his id (and only if the user get it!
+
+In **mongodb**, the `_id` isn't a string so we have to transforme it into a `ObjectId` to do this, you installed `objectid` node. It convert the `msg.payload._id` (string) to `msg.payload._id` (object) !
+
+Don't worry, I will help you !
+
+Like the 2 previous one, you will need to use a `http in` but you need to put `:id` at the end. It means this route have a "paramater" (like a variable)
+![getTodoId](./img/getTodoId.png)
+
+Now we need to put the `id` and the `userid` in the `msg.payload` object to do a query. <br>
+![getTodoIdFunc](./img/getTodoIdFunc.png)
+
+Now we need to convert the `_id` (string) to `_id` (objectid) with the `objectid` node (in the function block) <br>
+![getTodoObjectId](./img/getTodoObjectId.png)
+
+## You did it !
+
+Good job ! You did it ! <br>
+You did 80% of a CRUD API, the 20 others percents are the delete/modify routes and few verification for the security or things like "You can't have 2 sames email"... <br>
+
+# The biggest question is...
+
+![randomPotatoe](https://media.giphy.com/media/2u9HmOf6BmqwU/giphy.gif)
