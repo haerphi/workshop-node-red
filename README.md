@@ -86,6 +86,7 @@ The `template` node just "format" a response and return a string.
 
 In this example:
 ![ifexample](./img/ifexample.png)
+![switchExample](./img/switchExample.png)
 
 - first I put a `inject` to inject a value in the flow (value : 5)
 - then I check with a `switch` if the value is `<= 5` or `< 5`
