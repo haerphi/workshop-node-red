@@ -106,7 +106,7 @@ But there is no node aboud database. The next step will help to install "new" no
 
 - first you will need to install mongodb2 (2 because the first version isn't really complete) in node-red
 
-- click on the menu icon in the top right of the window and click in `settings`
+- click on the menu icon in the top right of the window and click in `settings` <br>
   ![menu](./img/menu.png)
 
 - in the `user settings` popup, click on `Palette` and on the `install` tab
@@ -142,5 +142,5 @@ You should have something like this:
 - edit it
   - edit the server to get this (user :dev, password dev)
     ![mongodb2server](./img/mongodb2server.png)
-- First step: we will insert a todo in the database in the collection `todo` so in the collection field of mongodb2 just write `todo` and change to operation to get `insertOne`
+- First step: we will insert a todo in the database in the collection `todo` so in the collection field of mongodb2 just write `todo` and change to operation to get `insertOne` <br>
   ![mongodbInsert](./img/mongodbInsert.png)
