@@ -189,7 +189,7 @@ If you have any question about this part, just ask them :)
 
 ### Create a task (insert again)
 
-Ok, insert something is easy now, you know how to do it ! But we will make it bit more complicated. if you don't specify anything, every user will see every task... And we don't want it...
+Ok, insert something is easy... Now, you know how to do it ! But we will make it bit more complicated. if you don't specify anything, every user will see every task of every one... And we don't want it...
 
 Earlier, I told you to save the `_id` of the user when you did the `login` request with **postman**. It's time to use it now.
 
@@ -198,8 +198,8 @@ In postman just place this `_id` in a new headers called `Authorization` like th
 
 - To create a task and assign it to a user, you will need a `http in` node, `http response` node, `mongodb2 in` node (with `insertOne`) and... a `function` node !<br>
   In fact, you will need to write few code lines... <br>
-  But what will we do and what will we write ?<br>
-  We need to find the id in the header (`msg.req.authorization`) and put it in the `idUser` property in the `msg.payload` <br>
+  But what will we do ? And what will we write ?<br>
+  We need to find the id in the headers (`msg.req.headers.authorization`) and put it in the `idUser` property in the `msg.payload` <br>
   ![authorizationtoiduser](./img/authorizationtoiduser.png)
   Test in **postman** without forget to write the `authorization` in the `headers` tab <br>
   ![newTodo](./img/newTodo.png)
@@ -210,7 +210,7 @@ Find all task from a user is like the previous one but with a `find.toArray` and
 ![getTodos](./img/getTodos.png)
 ![getTodosPostman](./img/getTodosPostman.png)
 
-### Find a task by his id (and only if the user get it!
+### Find a task by his id (and only if the user get it!)
 
 In **mongodb**, the `_id` isn't a string so we have to transforme it into a `ObjectId` to do this, you installed `objectid` node. It convert the `msg.payload._id` (string) to `msg.payload._id` (object) !
 
@@ -228,7 +228,7 @@ Now we need to convert the `_id` (string) to `_id` (objectid) with the `objectid
 ## You did it !
 
 Good job ! You did it ! <br>
-You did 80% of a CRUD API, the 20 others percents are the delete/modify routes and few verification for the security or things like "You can't have 2 sames email"... <br>
+You did 80% of a CRUD API, the 20 others percents are the delete/modify routes and few verification for the security or things like "You can't have 2 sames email in the database"... <br>
 
 # The biggest question is...
 
