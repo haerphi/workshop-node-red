@@ -20,10 +20,11 @@ Postman is a software that help you to test your api.
 
 ## Test a POST
 
-- in the headers tab, you will need to insert a new line : `Content-Type` and `application/json`. It means : "you will send information in JSON". <br>
-  ![headers](./postmanimg/headers.png)
+- in the headers tab, you will need to insert a new line : `Content-Type` and `application/json`. It means : "you will send a JSON". <br>
+  ![headers](./postmanimg/headers.png)<br>
 
 (don't worry if the url of the request change, I just change my mind when I did the screenshot)
 
 - in the body tab, you will need to check the `row` circle and write few line of JSON like the example <br>
-  ![body](./postmanimg/body.png)
+  ![body](./postmanimg/body.png) <br>
+  (you would get a other result if you used it with the login route)
