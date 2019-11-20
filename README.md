@@ -49,8 +49,6 @@ If you want to go in this folder, you will need to run the cmd in the docker con
 - connect to the local database (user: dev & password: dev)
   ![compass](./img/compass.png)
 
-- create a new database
-
 ## Getting start
 
 Node-red is setup and "securised" !
@@ -124,13 +122,24 @@ But there is no node aboud database. The next step will help to install "new" no
 - drag&drop a `http in` node and edit his proteries
   ![httpget/](./img/httpproperty.png)
 
-- drag&drop a http response
+- drag&drop a `http response`
 
-- place a template node between them and edit it to return "hello world"
+- place a `template` node between them and edit it to return "hello world"
 
-You should something like this:
+You should have something like this:
 ![httpget/](./img/api-helloworld.png)
 
 - try in your natigator : http://127.0.0.1:1880/hello, you should see `Hello world`
 
 ![victory](./img/victory.jpeg)
+
+### Use mongodb node
+
+#### Setup mongodb settings
+
+- drag&drop a `mongodb2 in` from the palette to the workspace
+- edit it
+  - edit the server to get this (user :dev, password dev)
+    ![mongodb2server](./img/mongodb2server.png)
+- First step: we will insert a todo in the database in the collection `todo` so in the collection field of mongodb2 just write `todo` and change to operation to get `insertOne`
+  ![mongodbInsert](./img/mongodbInsert.png)
